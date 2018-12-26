@@ -1,0 +1,18 @@
+#!/bin/bash
+case $(echo -e "start-up-page\nPersonal Website\nResume\nKotlin\nOptimizing Alcoholism" | rofi -dmenu -i -p "Projects: ") in
+	start-up-page)
+		st -e ranger ~/Projects/start-up-page/
+		;;
+	Resume)
+		st -e ranger ~/Professional/Resume/Default/
+		;;
+	Personal\ Website)
+		st -e ranger ~/Projects/personal-website
+		;;
+	Kotlin)
+		st -e ranger ~/OpenSource/kotlin/
+		;;
+	Optimizing\ Alcoholism)
+		st -e ranger ~/Academics/SelfStudy/BeerProblem/
+		;;
+esac

@@ -1,0 +1,2 @@
+#!/bin/bash
+light -S $(echo -e "" | rofi -dmenu -i -p "Light: ")

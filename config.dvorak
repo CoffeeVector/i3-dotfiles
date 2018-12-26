@@ -1,0 +1,192 @@
+#i3-config
+#Kevin Zheng
+set $mod Mod4
+set $alt Mod1
+
+#AESTHETIC
+exec_always compton --config=/home/coffeevector/.config/compton/compton.conf
+exec_always --no-startup-id feh --bg-fill '/home/coffeevector/Pictures/Themes/Wallpaper.png'
+exec --no-startup-id i3-battery-popup -N
+default_border none
+font pango:Noto Mono Regular 11
+#set Xresources
+set_from_resource $foregr foreground
+set_from_resource $backgr background
+set_from_resource $black color0
+set_from_resource $gray color8
+set_from_resource $red color1
+#set_from_resource $red color9
+set_from_resource $green color2
+#set_from_resource $green color10
+set_from_resource $yellow color3
+#set_from_resource $yellow color11
+set_from_resource $blue color4
+#set_from_resource $blue color12
+set_from_resource $magenta color5
+#set_from_resource $magenta color13
+set_from_resource $cyan color6
+#set_from_resource $cyan color14
+set_from_resource $white color7
+#set_from_resource $white color15
+
+# APPLICATIONS
+bindsym $mod+e exec st -e ranger
+bindsym $mod+r exec st -e rtv
+bindsym $mod+Shift+g exec ~/.config/i3/scripts/gchrome/urls.sh
+bindsym Control+Shift+Escape exec gnome-system-monitor
+bindsym Control+Shift+x exec gyazo
+bindsym $mod+Tab exec ~/.config/i3/scripts/computer/computer.sh
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
+bindsym $mod+s exec rofi -show ssh
+bindsym $mod+w exec rofi -show window
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym Control+$alt+t exec i3-sensible-terminal
+bindsym $mod+x exec st -e vim ~/Backup/resticExclusions
+#bindsym $mod+b exec ~/.config/i3/scripts/backup/backup.sh
+bindsym $mod+b exec ~/.config/i3/scripts/light/light.sh
+bindsym $mod+Shift+d exec ~/.config/i3/scripts/keyboard/keyboard.sh
+
+# BEHAVIOR
+# kill focused window
+bindsym $mod+q kill
+bindsym $alt+F4 kill
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+# move workspace to monitor
+bindsym $mod+Left exec i3-msg move workspace to left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right exec i3-msg move workspace to right
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+#Resize windows
+bindsym $mod+u resize shrink width 10 px or 10 ppt
+bindsym $mod+i resize shrink height 10 px or 10 ppt
+bindsym $mod+o resize grow height 10 px or 10 ppt
+bindsym $mod+p resize grow width 10 px or 10 ppt
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+# focus follows mouse
+focus_follows_mouse no
+# split in horizontal orientation
+bindsym $mod+h split h
+# split in vertical orientation
+bindsym $mod+v split v
+# enter fullscreen mode for the focused container
+#bindsym $mod+f fullscreen toggle
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+w layout tabbed
+bindsym $mod+Shift+f layout toggle split
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+# focus the parent container
+bindsym $mod+a focus parent
+# focus the child container
+#bindsym $mod+d focus child
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+#MEDIA KEYS
+#Screen brightness controls with media keys
+bindsym XF86MonBrightnessUp exec light -A 2
+bindsym XF86MonBrightnessDown exec light -U 2
+#Pulse Audio controls
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 1 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 1 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+#Pulse Audio Controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+#dmenus
+bindsym $mod+t exec ~/.config/i3/scripts/touchpad/touchpad.sh
+bindsym $mod+slash exec ~/.config/i3/scripts/ide/ide.sh
+bindsym $mod+apostrophe exec ~/.config/i3/scripts/projects/projects.sh
+bindsym $mod+g exec ~/.config/i3/scripts/gchrome/gchrome.sh
+bindsym $mod+Shift+t exec ~/.config/i3/scripts/theming/theming.sh
+
+#Start up programs
+assign [class = "discord"] 10
+exec discord
+assign [class = "Steam"] 9
+assign [title = "Steam"] 9
+exec steam
+assign [class = "cumulonimbus"] 8
+assign [title = "cumulonimbus"] 8
+exec --no-startup-id nm-applet
+
+#MISC
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# class                 border  backgr. text    indicator child_border
+client.focused          $blue   $blue   $black  $white    $blue
+client.focused_inactive $gray   $gray   $white  $black    $black
+client.unfocused        $gray   $gray   $white  $white    $black
+client.urgent           $red    $red    $white  $red      $red
+client.placeholder      $white  $gray   $white  $black    $gray
+client.background       $background
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+
+exec_always --no-startup-id polybar -l error example
+#bar {
+#	status_command i3status
+#
+#	#status_command $HOME/.config/i3/conkyWrapperScript.sh
+#	#mode invisible
+#
+#	colors{
+#		background $background
+#		focused_workspace $blue $blue $black
+#		active_workspace $blue $blue $black
+#		inactive_workspace $background $background $white
+#		urgent_workspace $red $red $white
+#
+#	}
+#}
+# MEME
+bindsym $mod+c exec st -e mpv /home/coffeevector/Music/memey/CarelessWhisper.mp3
+bindsym $mod+m exec google-chrome https://www.twitch.tv/shadeslayer55
+bindsym $mod+Shift+m exec google-chrome https://mystudentrecord.ucmerced.edu/pls/PROD/xhwschedule.p_selectsubject https://mystudentrecord.ucmerced.edu/pls/PROD/bwskfreg.P_AltPin
