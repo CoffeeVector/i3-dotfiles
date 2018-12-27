@@ -1,5 +1,5 @@
 #!/bin/bash
-case $(echo -e "Wood\nSakura\nPrimitive Sun" | rofi -dmenu -i -p "Themeing: ") in
+case $(echo -e "Wood\nSakura\nPrimitive Sun" | rofi -dmenu -i -p "Themeing") in
 	Wood)
 		rm ~/Pictures/Themes/Wallpaper.png
 		ln -s ~/Pictures/Themes/Wood/Wood.png ~/Pictures/Themes/Wallpaper.png

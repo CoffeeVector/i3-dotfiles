@@ -1,5 +1,5 @@
 #!/bin/bash
-case $(echo -e "<3\nPalani\n" | rofi -dmenu -i -p "Messenger Contacts: ") in
+case $(echo -e "<3\nPalani\n" | rofi -dmenu -i -p "Messenger Contacts") in
 	\<3)
 		google-chrome --new-window https://www.messenger.com/t/alexa.karayan
 		;;

@@ -1,5 +1,5 @@
 #!/bin/bash
-rofiOutput=$(echo -e "Normal\nIncognito\nGuest\nBrowsh" | rofi -dmenu -i -p "google-chrome: ")
+rofiOutput=$(echo -e "Normal\nIncognito\nGuest\nBrowsh" | rofi -dmenu -i -p "google-chrome")
 case $rofiOutput in
 	Incognito)
 		google-chrome --incognito

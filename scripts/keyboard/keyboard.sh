@@ -1,5 +1,5 @@
 #!/bin/bash
-case $(echo -e "QWERTY\nDVORAK" | rofi -dmenu -i -p "Keyboard: ") in
+case $(echo -e "QWERTY\nDVORAK" | rofi -dmenu -i -p "Keyboard") in
 	DVORAK)
 		setxkbmap -layout us -variant dvp -option compose:102 -option numpad:shift3 -option kpdl:semi
 		#rm ~/.config/i3/config

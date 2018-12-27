@@ -1,5 +1,5 @@
 #!/bin/bash
-case $(echo -e "Java\nC\nPHP\nJavaScript\nGoLand\nPyCharm\nIdea\nAndroidStudio\nDataGrip" | rofi -dmenu -i -p "IDEs: ") in
+case $(echo -e "Java\nC\nPHP\nJavaScript\nGoLand\nPyCharm\nIdea\nAndroidStudio\nDataGrip" | rofi -dmenu -i -p "IDEs") in
 	Java)
 		/home/coffeevector/.config/i3/scripts/ide/java.sh
 		;;

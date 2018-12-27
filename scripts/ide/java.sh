@@ -1,5 +1,5 @@
 #!/bin/bash
-case $(echo -e "Java\nKotlin\nOther\n" | rofi -dmenu -i -p "Java Workspaces: ") in
+case $(echo -e "Java\nKotlin\nOther\n" | rofi -dmenu -i -p "Java Workspaces") in
 	Java)
 		javaEclipse -data /home/coffeevector/javaWorkspace
 		;;

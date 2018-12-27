@@ -1,5 +1,5 @@
 #!/bin/bash
-case $(echo -e "Schedule\nSpring Schedule\nCat Courses\nDesmos" | rofi -dmenu -i -p "urls: ") in
+case $(echo -e "Schedule\nSpring Schedule\nCat Courses\nDesmos" | rofi -dmenu -i -p "urls") in
 	Schedule)
 		google-chrome https://docs.google.com/spreadsheets/d/1kOfYULt2iKv-h3LI9KUNyq7LS02PYs4YrVeqkXxHNfY/edit#gid=1787013216
 		;;
