@@ -42,10 +42,12 @@ bindsym $mod+s exec rofi -show ssh
 bindsym $mod+w exec rofi -show window
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym Control+$alt+t exec i3-sensible-terminal
-bindsym $mod+x exec st -e vim ~/Backup/resticExclusions
-#bindsym $mod+b exec ~/.config/i3/scripts/backup/backup.sh
+bindsym $mod+x exec st -e ranger ~/Desktop
+bindsym $mod+z exec st -e ranger ~/Downloads
+bindsym $mod+Shift+p exec st -e ranger ~/Professional
 bindsym $mod+b exec ~/.config/i3/scripts/light/light.sh
 bindsym $mod+Shift+d exec ~/.config/i3/scripts/keyboard/keyboard.sh
+bindsym $mod+p exec st -e vim
 
 # BEHAVIOR
 # kill focused window
@@ -188,5 +190,4 @@ exec_always --no-startup-id polybar -l error example
 # MEME
 bindsym $mod+c exec st -e mpv /home/coffeevector/Music/memey/CarelessWhisper.mp3
 bindsym $mod+m exec ~/.config/i3/scripts/messenger/messenger.sh
-bindsym $mod+Shift+m exec google-chrome https://mystudentrecord.ucmerced.edu/pls/PROD/xhwschedule.p_selectsubject https://mystudentrecord.ucmerced.edu/pls/PROD/bwskfreg.P_AltPin
 bindsym $mod+Shift+b exec google-chrome https://www.youtube.com/watch?v=z6M2xt_Ks4Y

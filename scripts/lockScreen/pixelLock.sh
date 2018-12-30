@@ -3,7 +3,7 @@ TMPBG=/tmp/screen.png
 scrot $TMPBG && convert -gravity West $TMPBG -scale 2.5% -scale 4000% /home/coffeevector/Pictures/Themes/WallpaperOverlay.png -composite -matte $TMPBG
 i3lock \
 	-i $TMPBG \
-	--radius 100 \
+	--radius 75 \
 	--veriftext="" \
 	--wrongtext="" \
 	--insidecolor=66d9efc0 \
