@@ -1,19 +1,15 @@
 #!/bin/bash
 case $(echo -e "Restic Backup\nRestic Forget\nRestic Prune\nDrive Push" | rofi -dmenu -i -p "Computer") in
 	Restic\ Backup)
-		st -e restic backup --exclude-file=/home/coffeevector/Backup/resticExclusions -r /home/coffeevector/Backup/resticBackup /home/coffeevector
-		notify-send "BACKUP COMPLETE"
+		/home/coffeevector/.config/i3/scripts/backup/backup-backup.sh
 		;;
 	Restic\ Forget)
-		st -e /home/coffeevector/.config/i3/scripts/backup/backup-forget.sh
-		notify-send "SNAPSHOT FORGET COMPLETE"
+		/home/coffeevector/.config/i3/scripts/backup/backup-forget.sh
 		;;
 	Restic\ Prune)
-		st -e /home/coffeevector/.config/i3/scripts/backup/backup-prune.sh
-		notify-send "PRUNE COMPLETE"
+		/home/coffeevector/.config/i3/scripts/backup/backup-prune.sh
 		;;
 	Drive\ Push)
-		st -e /home/coffeevector/.config/i3/scripts/backup/backup-push.sh
-		notify-send "DRIVE PUSH COMPLETE"
+		/home/coffeevector/.config/i3/scripts/backup/backup-push.sh
 		;;
 esac
