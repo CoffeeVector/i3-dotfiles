@@ -1,5 +1,5 @@
 #!/bin/bash
-rofiOutput=$(echo -e "Normal\nIncognito\nGuest\nBrowsh" | rofi -dmenu -i -p "google-chrome")
+rofiOutput=$(echo -e "Normal\nIncognito\nGuest\nBrowsh\nSchedule\nCat Courses\nDesmos" | rofi -dmenu -i -p "google-chrome")
 case $rofiOutput in
 	Incognito)
 		google-chrome --incognito
@@ -11,6 +11,15 @@ case $rofiOutput in
 		;;
 	Browsh)
 		st -e browsh
+		;;
+	Schedule)
+		google-chrome https://docs.google.com/spreadsheets/d/1EwtXgc-dD2aGPBF7PSismlcEY4A2ga-Uao_QPlwd0RQ/edit#gid=0
+		;;
+	Cat\ Courses)
+		google-chrome catcourses.ucmerced.edu
+		;;
+	Desmos)
+		google-chrome desmos.com/calculator
 		;;
 	*)
 		rofiOutput=${rofiOutput// /+}
