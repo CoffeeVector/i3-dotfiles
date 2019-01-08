@@ -1,7 +1,8 @@
 #!/bin/bash
-output=$(rofi -dmenu -password -lines 0 -p "Password" | restic prune -r /home/coffeevector/Backup/resticBackup | grep "frees" | awk '{print $11}')
+notifyID=$(notify-send.sh -p -t 1000000 "BACKUP IN PROGRESS")
+output=$(rofi -dmenu -password -lines 0 -p "Password" | restic prune -r /home/coffeevector/Backup/resticBackup | grep "frees" | awk '{print $11 $12}')
 if [ "$output" = "" ];then
-	notify-send "PRUNE FAILED"
+	notify-send.sh -r $notifyID "PRUNE FAILED."
 else
-	notify-send "PRUNE COMPLETE: freed "$output
+	notify-send.sh -r $notifyID "PRUNE COMPLETE: freed "$output
 fi
