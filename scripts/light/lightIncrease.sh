@@ -1,3 +1,3 @@
 #!/bin/bash
 light -A 2
-notify-send "Brightness: "$(light -G)
+notify-send -t 1000 "Brightness: "$(light -G)
