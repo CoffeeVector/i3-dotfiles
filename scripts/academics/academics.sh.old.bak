@@ -1,2 +1,0 @@
-#!/bin/bash
-st -e ranger "/home/coffeevector/Academics/UCMerced/Spring2019/"$(ls ~/Academics/UCMerced/Spring2019/ | rofi -dmenu -i -p "Academics: ")
