@@ -1,5 +1,6 @@
 #!/bin/bash
-case $(echo -e "Restic Backup\nRestic Forget\nRestic Snapshots\nRestic Prune\nDrive Push" | rofi -dmenu -i -p "Restic Backup") in
+date=$(cat ~/.config/i3/scripts/backup/last-backup-date)
+case $(echo -e "Restic Backup\nRestic Forget\nRestic Snapshots\nRestic Prune\nDrive Push" | rofi -dmenu -i -p "Last Backup: $date") in
 	Restic\ Backup)
 		/home/coffeevector/.config/i3/scripts/backup/backup-backup.sh
 		;;
