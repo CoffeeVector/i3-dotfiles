@@ -4,6 +4,6 @@ output=$(rofi -dmenu -password -lines 0 -p "Password" | restic backup --exclude-
 if [ "$output" = "" ]; then
 	notify-send.sh -r $notifyID "BACKUP FAILED."
 else
-	date +"%B %d, %Y" > ~/.config/i3/scripts/backup/last-backup-date
+	date +"%B %d, %Y" > ~/Backup/resticBackup/last-backup-date
 	notify-send.sh -r $notifyID "BACKUP COMPLETE."
 fi
