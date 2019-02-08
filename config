@@ -51,6 +51,7 @@ bindsym $mod+equal exec ~/.config/i3/scripts/light/lightIncrease.sh
 bindsym $mod+minus exec ~/.config/i3/scripts/light/lightDecrease.sh
 bindsym $mod+Shift+d exec ~/.config/i3/scripts/keyboard/keyboard.sh
 bindsym $mod+p exec st -e vim
+bindsym $mod+backslash exec st -e vim -c ":read ~/.latex/tex.template"
 
 # BEHAVIOR
 # kill focused window
@@ -193,4 +194,3 @@ exec_always --no-startup-id polybar -l error bar -c $HOME/.config/polybar/config
 #}
 # MEME
 #bindsym $mod+c exec st -e mpv /home/coffeevector/Music/memey/CarelessWhisper.mp3
-bindsym $mod+m exec ~/.config/i3/scripts/messenger/messenger.sh
