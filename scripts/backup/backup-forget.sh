@@ -4,7 +4,7 @@ if [ "$output" = "" ]; then
 	notify-send "SNAPSHOT FORGET FAILED"
 	exit 1
 fi
-snapshot=$(cat /tmp/restic-snapshots.txt | rofi -dmenu -i -p "Snapshot" | awk '{print $1}')
+snapshot=$(cat /tmp/restic-snapshots.txt | rofi -dmenu -multi-select -i -p "Snapshot" | awk '{print $1}')
 rm /tmp/restic-snapshots.txt
 if [ "$snapshot" = "" ]; then
 	notify-send "EXITING SNAPSHOT FORGET"
