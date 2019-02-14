@@ -41,6 +41,7 @@ bindsym $mod+d exec rofi -show run
 bindsym $mod+s exec rofi -show ssh
 bindsym $mod+w exec rofi -show window
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec st -e fish
 bindsym Control+$alt+t exec i3-sensible-terminal
 bindsym $mod+x exec st -e ranger ~/Desktop
 bindsym $mod+z exec st -e ranger ~/Downloads
