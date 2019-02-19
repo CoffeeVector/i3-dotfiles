@@ -32,10 +32,10 @@ set_from_resource $white color7
 # APPLICATIONS
 bindsym $mod+e exec st -e ranger
 bindsym $mod+r exec st -e rtv
-bindsym $mod+Shift+g exec ~/.config/i3/scripts/gchrome/urls.sh
+bindsym $mod+Shift+g exec ~/scripts/gchrome/urls.sh
 bindsym Control+Shift+Escape exec gnome-system-monitor
 bindsym Control+Shift+x exec gyazo
-bindsym $mod+Tab exec ~/.config/i3/scripts/computer/computer.sh
+bindsym $mod+Tab exec ~/scripts/computer/computer.sh
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show run
 bindsym $mod+s exec rofi -show ssh
@@ -46,11 +46,11 @@ bindsym Control+$alt+t exec i3-sensible-terminal
 bindsym $mod+x exec st -e ranger ~/Desktop
 bindsym $mod+z exec st -e ranger ~/Downloads
 bindsym $mod+Shift+p exec st -e ranger ~/Professional
-bindsym $mod+b exec ~/.config/i3/scripts/light/light.sh
-bindsym $mod+Shift+b exec ~/.config/i3/scripts/backup/backup.sh
-bindsym $mod+equal exec ~/.config/i3/scripts/light/lightIncrease.sh
-bindsym $mod+minus exec ~/.config/i3/scripts/light/lightDecrease.sh
-bindsym $mod+Shift+d exec ~/.config/i3/scripts/keyboard/keyboard.sh
+bindsym $mod+b exec ~/scripts/light/light.sh
+bindsym $mod+Shift+b exec ~/scripts/backup/backup.sh
+bindsym $mod+equal exec ~/scripts/light/lightIncrease.sh
+bindsym $mod+minus exec ~/scripts/light/lightDecrease.sh
+bindsym $mod+Shift+d exec ~/scripts/keyboard/keyboard.sh
 bindsym $mod+p exec st -e vim
 bindsym $mod+backslash exec st -e vim -c ":read ~/.latex/tex.template"
 
@@ -142,12 +142,12 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2dB- unmu
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 #dmenus
-bindsym $mod+t exec ~/.config/i3/scripts/touchpad/touchpad.sh
-bindsym $mod+slash exec ~/.config/i3/scripts/ide/ide.sh
-bindsym $mod+apostrophe exec ~/.config/i3/scripts/projects/projects.sh
-bindsym $mod+semicolon exec ~/.config/i3/scripts/academics/academics.sh
-bindsym $mod+g exec ~/.config/i3/scripts/gchrome/gchrome.sh
-bindsym $mod+Shift+t exec ~/.config/i3/scripts/theming/theming.sh
+bindsym $mod+t exec ~/scripts/touchpad/touchpad.sh
+bindsym $mod+slash exec ~/scripts/ide/ide.sh
+bindsym $mod+apostrophe exec ~/scripts/projects/projects.sh
+bindsym $mod+semicolon exec ~/scripts/academics/academics.sh
+bindsym $mod+g exec ~/scripts/gchrome/gchrome.sh
+bindsym $mod+Shift+t exec ~/scripts/theming/theming.sh
 
 #Start up programs
 assign [class = "discord"] 10
