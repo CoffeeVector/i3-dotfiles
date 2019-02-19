@@ -143,7 +143,7 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 
 #dmenus
 bindsym $mod+t exec ~/scripts/touchpad/touchpad.sh
-bindsym $mod+slash exec ~/scripts/ide/ide.sh
+bindsym $mod+slash exec ~/scripts/todo/todo.sh
 bindsym $mod+apostrophe exec ~/scripts/projects/projects.sh
 bindsym $mod+semicolon exec ~/scripts/academics/academics.sh
 bindsym $mod+g exec ~/scripts/gchrome/gchrome.sh
