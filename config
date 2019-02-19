@@ -51,8 +51,7 @@ bindsym $mod+Shift+b exec ~/scripts/backup/backup.sh
 bindsym $mod+equal exec ~/scripts/light/lightIncrease.sh
 bindsym $mod+minus exec ~/scripts/light/lightDecrease.sh
 bindsym $mod+Shift+d exec ~/scripts/keyboard/keyboard.sh
-bindsym $mod+p exec st -e vim
-bindsym $mod+backslash exec st -e vim -c ":read ~/.latex/tex.template"
+bindsym $mod+backslash exec st -e vim
 
 # BEHAVIOR
 # kill focused window
