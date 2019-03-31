@@ -32,7 +32,6 @@ set_from_resource $white color7
 # APPLICATIONS
 bindsym $mod+e exec st -e ranger
 bindsym $mod+r exec st -e rtv
-bindsym $mod+Shift+g exec ~/scripts/gchrome/urls.sh
 bindsym Control+Shift+Escape exec gnome-system-monitor
 bindsym Control+Shift+x exec gyazo
 bindsym $mod+Tab exec ~/scripts/computer/computer.sh
@@ -52,6 +51,7 @@ bindsym $mod+equal exec ~/scripts/light/lightIncrease.sh
 bindsym $mod+minus exec ~/scripts/light/lightDecrease.sh
 bindsym $mod+Shift+d exec ~/scripts/keyboard/keyboard.sh
 bindsym $mod+backslash exec st -e vim
+bindsym $mod+Shift+g exec ~/scripts/otflatex/otflatexgen.sh
 
 # BEHAVIOR
 # kill focused window
@@ -153,7 +153,6 @@ assign [class = "discord"] 10
 exec discord
 assign [class = "Steam"] 9
 assign [title = "Steam"] 9
-exec steam
 assign [class = "cumulonimbus"] 8
 assign [title = "cumulonimbus"] 8
 exec --no-startup-id nm-applet
