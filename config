@@ -32,7 +32,7 @@ set_from_resource $white color7
 # APPLICATIONS
 bindsym $mod+e exec st -e ranger
 bindsym $mod+r exec st -e rtv
-bindsym Control+Shift+Escape exec gnome-system-monitor
+bindsym Control+Shift+Escape exec st -e top
 bindsym Control+Shift+x exec gyazo
 bindsym $mod+Tab exec ~/scripts/computer/computer.sh
 #bindsym $mod+d exec dmenu_run
@@ -150,7 +150,7 @@ bindsym $mod+Shift+t exec ~/scripts/theming/theming.sh
 #Start up programs
 assign [class = "discord"] 10
 exec discord
-assign [class = "weechat"] 9
+assign [title = "weechat"] 9
 exec st -e weechat
 exec --no-startup-id nm-applet
 
