@@ -3,13 +3,21 @@
 set $mod Mod4
 set $alt Mod1
 
+#Start up programs
+assign [class = "discord"] 10
+exec discord
+assign [title = "weechat"] 9
+exec st -e weechat
+exec --no-startup-id nm-applet
+
 #AESTHETIC
 exec_always compton --config=/home/coffeevector/.config/compton/compton.conf
 exec_always --no-startup-id feh --bg-fill '/home/coffeevector/Pictures/Themes/Wallpaper.png'
 exec --no-startup-id i3-battery-popup -N
+exec_always --no-startup-id polybar -l error bar -c $HOME/.config/polybar/config
 default_border none
 font pango:Noto Mono Regular 11
-#set Xresources
+# setting Xresources colors
 set_from_resource $foregr foreground
 set_from_resource $backgr background
 set_from_resource $black color0
@@ -29,30 +37,36 @@ set_from_resource $cyan color6
 set_from_resource $white color7
 #set_from_resource $white color15
 
-# APPLICATIONS
-bindsym $mod+e exec st -e ranger
-bindsym $mod+r exec st -e rtv
+# HOTKEYS
 bindsym Control+Shift+Escape exec st -e top
-bindsym Control+Shift+x exec gyazo
-bindsym $mod+Tab exec ~/scripts/computer/computer.sh
-#bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run
-bindsym $mod+s exec rofi -show ssh
-bindsym $mod+w exec rofi -show window
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+Return exec st -e fish
 bindsym Control+$alt+t exec i3-sensible-terminal
-bindsym $mod+x exec st -e weechat
-bindsym $mod+Shift+p exec st -e ranger ~/Professional
+bindsym Control+Shift+x exec gyazo
+bindsym $mod+apostrophe exec ~/scripts/projects/projects.sh
 bindsym $mod+b exec ~/scripts/light/light.sh
 bindsym $mod+Shift+b exec ~/scripts/backup/backup.sh
-bindsym $mod+equal exec ~/scripts/light/lightIncrease.sh
-bindsym $mod+minus exec ~/scripts/light/lightDecrease.sh
-bindsym $mod+Shift+d exec ~/scripts/keyboard/keyboard.sh
 bindsym $mod+backslash exec st -e vim
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
+bindsym $mod+Shift+d exec ~/scripts/keyboard/keyboard.sh
+bindsym $mod+e exec st -e ranger
+bindsym $mod+equal exec ~/scripts/light/lightIncrease.sh
+bindsym $mod+g exec ~/scripts/gchrome/gchrome.sh
 bindsym $mod+Shift+g exec ~/scripts/otflatex/otflatexgen.sh
+bindsym $mod+minus exec ~/scripts/light/lightDecrease.sh
+bindsym $mod+Shift+p exec st -e ranger ~/Professional
+bindsym $mod+r exec st -e rtv
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec st -e fish
+bindsym $mod+s exec rofi -show ssh
+bindsym $mod+semicolon exec ~/scripts/academics/academics.sh
+bindsym $mod+slash exec ~/scripts/todo/todo.sh
+bindsym $mod+t exec ~/scripts/touchpad/touchpad.sh
+bindsym $mod+Shift+t exec ~/scripts/theming/theming.sh
+bindsym $mod+Tab exec ~/scripts/computer/computer.sh
+bindsym $mod+w exec rofi -show window
+bindsym $mod+x exec st -e weechat
 
-# BEHAVIOR
+# MOTION BEHAVIOR
 # kill focused window
 bindsym $mod+q kill
 bindsym $alt+F4 kill
@@ -113,7 +127,6 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
-
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -130,29 +143,10 @@ bindsym $mod+Shift+0 move container to workspace 10
 #Screen brightness controls with media keys
 bindsym XF86MonBrightnessUp exec light -A 2
 bindsym XF86MonBrightnessDown exec light -U 2
-#Pulse Audio controls
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 1 +5% #increase sound volume
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 1 -5% #decrease sound volume
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 #Pulse Audio Controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2dB- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
-
-#dmenus
-bindsym $mod+t exec ~/scripts/touchpad/touchpad.sh
-bindsym $mod+slash exec ~/scripts/todo/todo.sh
-bindsym $mod+apostrophe exec ~/scripts/projects/projects.sh
-bindsym $mod+semicolon exec ~/scripts/academics/academics.sh
-bindsym $mod+g exec ~/scripts/gchrome/gchrome.sh
-bindsym $mod+Shift+t exec ~/scripts/theming/theming.sh
-
-#Start up programs
-assign [class = "discord"] 10
-exec discord
-assign [title = "weechat"] 9
-exec st -e weechat
-exec --no-startup-id nm-applet
 
 #MISC
 # reload the configuration file
@@ -168,25 +162,3 @@ client.unfocused        $black  $gray   $white  $red    $black
 client.urgent           $red    $red    $white  $red    $red
 client.placeholder      $black  $gray   $white  $red    $gray
 client.background       $background
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-
-exec_always --no-startup-id polybar -l error bar -c $HOME/.config/polybar/config
-#bar {
-#	status_command i3status
-#
-#	#status_command $HOME/.config/i3/conkyWrapperScript.sh
-#	#mode invisible
-#
-#	colors{
-#		background $background
-#		focused_workspace $blue $blue $black
-#		active_workspace $blue $blue $black
-#		inactive_workspace $background $background $white
-#		urgent_workspace $red $red $white
-#
-#	}
-#}
-# MEME
-#bindsym $mod+c exec st -e mpv /home/coffeevector/Music/memey/CarelessWhisper.mp3
