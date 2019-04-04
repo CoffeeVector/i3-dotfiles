@@ -38,7 +38,7 @@ set_from_resource $white color7
 #set_from_resource $white color15
 
 # HOTKEYS
-bindsym Control+Shift+Escape exec st -e top
+bindsym Control+Shift+Escape exec st -e htop
 bindsym Control+$alt+t exec i3-sensible-terminal
 bindsym Control+Shift+x exec gyazo
 bindsym $mod+apostrophe exec ~/scripts/projects/projects.sh
