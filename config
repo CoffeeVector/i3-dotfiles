@@ -39,120 +39,197 @@ set_from_resource $white color7
 
 # HOTKEYS
 bindsym Control+Shift+Escape exec st -e htop
+# #Opens a new terminal and runs htop in it. htop is a kind of taskmanager
 bindsym Control+$alt+t exec i3-sensible-terminal
+# #Old syntax for opening a new terminal. $mod+Return should be preferred above Control+$alt+t.
 bindsym Control+Shift+x exec gyazo
+# #Screenshot
 bindsym $mod+apostrophe exec ~/scripts/projects/projects.sh
+# #Lists all directories in ~/Projects/ in dmenu, and opens selected in ranger
 bindsym $mod+b exec ~/scripts/light/light.sh
+# #Changes brightness
 bindsym $mod+Shift+b exec ~/scripts/backup/backup.sh
+# #Backup tool. Opens a dmenu of options such as backup, forget, snapshot, and prune.
 bindsym $mod+backslash exec st -e vim
+# #Opens a quick vim with no file attached to it.
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show run
+# #Opens a dmenu that lets you run applications
 bindsym $mod+Shift+d exec ~/scripts/keyboard/keyboard.sh
+# #WIP. Opens dmenu that switches keyboard layout
 bindsym $mod+e exec st -e ranger
+# #Opens ranger in the home directory.
 bindsym $mod+equal exec ~/scripts/light/lightIncrease.sh
+# #Increases the brightness
+bindsym $mod+F1 exec ~/scripts/rice-readme/rice-readme.sh
+# #Compiles and displays readme based on i3 config
 bindsym $mod+g exec ~/scripts/gchrome/gchrome.sh
+# #Opens google-chrome menu.
 bindsym $mod+Shift+g exec ~/scripts/otflatex/otflatexgen.sh
+# #On-the-fly latex. Opens a vim where you can enter latex math, then the pdf will be converted into a png and placed into clipboard.
 bindsym $mod+minus exec ~/scripts/light/lightDecrease.sh
+# #Decreases the brightness.
 bindsym $mod+Shift+p exec st -e ranger ~/Professional
+# #Lists all directories in ~/Professional/ in dmenu, and opens selected in ranger
 bindsym $mod+r exec st -e rtv
+# #Opens reddit in terminal
 bindsym $mod+Return exec i3-sensible-terminal
+# #Opens new terminal
 bindsym $mod+Shift+Return exec st -e fish
+# #Opens fish terminal
 bindsym $mod+s exec rofi -show ssh
+# #Opens ssh
 bindsym $mod+semicolon exec ~/scripts/academics/academics.sh
+# #Lists all directories in ~/Academics/ in dmenu, and opens selected in ranger
 bindsym $mod+slash exec ~/scripts/todo/todo.sh
+# #Opens todo app. A dmeny listing opens such as read, add/edit, delete, and drive push.
 bindsym $mod+t exec ~/scripts/touchpad/touchpad.sh
+# #Enable or disable touchpad.
 bindsym $mod+Shift+t exec ~/scripts/theming/theming.sh
+# #Changes the theme of the desktop environment. Changes the background and the lockscreen.
 bindsym $mod+Tab exec ~/scripts/computer/computer.sh
+# #Options such as shutdown, reboot, and lockscreen.
 bindsym $mod+w exec rofi -show window
+# #Dmenu windows.
 bindsym $mod+x exec st -e weechat
+# #Opens weechat
 
 # MOTION BEHAVIOR
 # kill focused window
 bindsym $mod+q kill
+# #Closes current container
 bindsym $alt+F4 kill
+# #Windows command for closing current container. $mod+q should be preferred.
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 # change focus
 bindsym $mod+h focus left
+# #Focuses left
 bindsym $mod+j focus down
+# #Focuses down
 bindsym $mod+k focus up
+# #Focuses up
 bindsym $mod+l focus right
+# #Focuses right
 # move workspace to monitor
 bindsym $mod+Left exec i3-msg move workspace to left
+# #Moves entire workspace to left monitor different monitor
 bindsym $mod+Down focus down
+# #Arrow key focus down
 bindsym $mod+Up focus up
+# #Arrow key focus up
 bindsym $mod+Right exec i3-msg move workspace to right
+# #Moves entire workspace to right monitor
 # move focused window
 bindsym $mod+Shift+h move left
+# #Moves container to the left
 bindsym $mod+Shift+j move down
+# #Moves container down
 bindsym $mod+Shift+k move up
+# #Moves container up
 bindsym $mod+Shift+l move right
+# #Moves container right
 #Resize windows
 bindsym $mod+y resize shrink width 10 px or 10 ppt
+# #Shrink width
 bindsym $mod+u resize shrink height 10 px or 10 ppt
+# #Shrink height
 bindsym $mod+i resize grow height 10 px or 10 ppt
+# #Grow height
 bindsym $mod+o resize grow width 10 px or 10 ppt
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# #Grow width
 # focus follows mouse
 focus_follows_mouse no
 # split in horizontal orientation
 bindsym $mod+v split v
+# #Split vertical
 bindsym $mod+Shift+v split h
+# #Split horizontal
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+# #Toggles fullscreen for container
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+Shift+s layout stacking
+# #Changes layout mode to stacking
 bindsym $mod+Shift+w layout tabbed
+# #Changes layout mode to tabbed
 bindsym $mod+Shift+f layout toggle split
+# #Changes layout mode to split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
+# #Toggle floating
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
+# #Toggle between focus modes
 # focus the parent container
 bindsym $mod+a focus parent
+# #Focus parent container
 # focus the child container
 bindsym $mod+c focus child
+# #Focus child container
 # switch to workspace
 bindsym $mod+1 workspace 1
+# #switch to workspace 1
 bindsym $mod+2 workspace 2
+# #switch to workspace 2
 bindsym $mod+3 workspace 3
+# #switch to workspace 3
 bindsym $mod+4 workspace 4
+# #switch to workspace 4
 bindsym $mod+5 workspace 5
+# #switch to workspace 5
 bindsym $mod+6 workspace 6
+# #switch to workspace 6
 bindsym $mod+7 workspace 7
+# #switch to workspace 7
 bindsym $mod+8 workspace 8
+# #switch to workspace 8
 bindsym $mod+9 workspace 9
+# #switch to workspace 9
 bindsym $mod+0 workspace 10
+# #switch to workspace 10
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
+# #move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
+# #move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
+# #move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
+# #move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
+# #move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
+# #move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
+# #move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
+# #move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
+# #move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
-
+# #move container to workspace 10
 #MEDIA KEYS
 #Screen brightness controls with media keys
 bindsym XF86MonBrightnessUp exec light -A 2
+# #increase brightness
 bindsym XF86MonBrightnessDown exec light -U 2
+# #decrease brightness
 #Pulse Audio Controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2dB+ unmute
+# #increase volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2dB- unmute
+# #decrease volume
 bindsym XF86AudioMute exec amixer -q set Master toggle
+# #mute
 
 #MISC
 # reload the configuration file
 bindsym $mod+Shift+c reload
+# #Reload the configuration file
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+# #Restart i3
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # class                 border  backgr. text    indicator child_border
