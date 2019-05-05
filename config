@@ -7,8 +7,9 @@ set $alt Mod1
 assign [class = "discord"] 10
 exec discord
 assign [title = "weechat"] 9
-exec st -e weechat
+exec x-terminal-emulator -e weechat
 exec --no-startup-id nm-applet
+exec dunst
 
 #AESTHETIC
 exec_always compton --config=/home/coffeevector/.config/compton/compton.conf
@@ -38,9 +39,9 @@ set_from_resource $white color7
 #set_from_resource $white color15
 
 # HOTKEYS
-bindsym Control+Shift+Escape exec st -e htop
+bindsym Control+Shift+Escape exec x-terminal-emulator -e htop
 # #Opens a new terminal and runs htop in it. htop is a kind of taskmanager
-bindsym Control+$alt+t exec i3-sensible-terminal
+bindsym Control+$alt+t exec x-terminal-emulator
 # #Old syntax for opening a new terminal. $mod+Return should be preferred above Control+$alt+t.
 bindsym Control+Shift+x exec gyazo
 # #Screenshot
@@ -50,32 +51,41 @@ bindsym $mod+b exec ~/scripts/light/light.sh
 # #Changes brightness
 bindsym $mod+Shift+b exec ~/scripts/backup/backup.sh
 # #Backup tool. Opens a dmenu of options such as backup, forget, snapshot, and prune.
-bindsym $mod+backslash exec st -e vim
+bindsym $mod+backslash exec x-terminal-emulator -e vim
 # #Opens a quick vim with no file attached to it.
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show run
 # #Opens a dmenu that lets you run applications
 bindsym $mod+Shift+d exec ~/scripts/keyboard/keyboard.sh
 # #WIP. Opens dmenu that switches keyboard layout
-bindsym $mod+e exec st -e ranger
+bindsym $mod+e exec x-terminal-emulator -e ranger
 # #Opens ranger in the home directory.
+bindsym $mod+Shift+equal exec ~/scripts/volume/volumeIncrease.sh
+# # Volume increase
 bindsym $mod+equal exec ~/scripts/light/lightIncrease.sh
 # #Increases the brightness
 bindsym $mod+F1 exec ~/scripts/rice-readme/rice-readme.sh
 # #Compiles and displays readme based on i3 config
-bindsym $mod+g exec ~/scripts/gchrome/gchrome.sh
+#bindsym $mod+g exec ~/scripts/gchrome/gchrome.sh
+bindsym $mod+g exec ~/scripts/surf-scripts/surf.sh
 # #Opens google-chrome menu.
 bindsym $mod+Shift+g exec ~/scripts/otflatex/otflatexgen.sh
 # #On-the-fly latex. Opens a vim where you can enter latex math, then the pdf will be converted into a png and placed into clipboard.
+bindsym $mod+Control+Shift+minus exec ~/scripts/volume/mute.sh
+# # Mutes
+bindsym $mod+Shift+minus exec ~/scripts/volume/volumeDecrease.sh
+# #Decreases the volume
 bindsym $mod+minus exec ~/scripts/light/lightDecrease.sh
 # #Decreases the brightness.
-bindsym $mod+Shift+p exec st -e ranger ~/Professional
+bindsym $mod+m exec ~/scripts/dmenuCalc/dmenuCalc.sh
+# #Opens a menu that lets you do calculatiosn
+bindsym $mod+Shift+p exec x-terminal-emulator -e ranger ~/Professional
 # #Lists all directories in ~/Professional/ in dmenu, and opens selected in ranger
-bindsym $mod+r exec st -e rtv
+bindsym $mod+r exec x-terminal-emulator -e rtv
 # #Opens reddit in terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec x-terminal-emulator
 # #Opens new terminal
-bindsym $mod+Shift+Return exec st -e fish
+bindsym $mod+Shift+Return exec x-terminal-emulator -e fish
 # #Opens fish terminal
 bindsym $mod+s exec rofi -show ssh
 # #Opens ssh
@@ -91,7 +101,7 @@ bindsym $mod+Tab exec ~/scripts/computer/computer.sh
 # #Options such as shutdown, reboot, and lockscreen.
 bindsym $mod+w exec rofi -show window
 # #Dmenu windows.
-bindsym $mod+x exec st -e weechat
+bindsym $mod+x exec x-terminal-emulator -e weechat
 # #Opens weechat
 
 # MOTION BEHAVIOR
@@ -141,20 +151,19 @@ bindsym $mod+o resize grow width 10 px or 10 ppt
 # focus follows mouse
 focus_follows_mouse no
 # split in horizontal orientation
-bindsym $mod+v split v
+bindsym $mod+v split v; exec polybar-msg hook orientation 1
 # #Split vertical
-bindsym $mod+Shift+v split h
+bindsym $mod+Shift+v split h; exec polybar-msg hook orientation 1
 # #Split horizontal
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 # #Toggles fullscreen for container
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Shift+s layout stacking
-# #Changes layout mode to stacking
+#bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+s exec ~/scripts/gchrome/gchrome.sh
+# #Runs surf
 bindsym $mod+Shift+w layout tabbed
-# #Changes layout mode to tabbed
 bindsym $mod+Shift+f layout toggle split
-# #Changes layout mode to split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 # #Toggle floating
