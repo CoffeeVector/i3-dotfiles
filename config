@@ -45,7 +45,7 @@ bindsym Control+$alt+t exec x-terminal-emulator
 # #Old syntax for opening a new terminal. $mod+Return should be preferred above Control+$alt+t.
 bindsym Control+Shift+x exec gyazo
 # #Screenshot
-bindsym $mod+apostrophe exec ~/scripts/projects/projects.sh
+bindsym $mod+apostrophe exec x-terminal-emulator -e ranger ~/Projects
 # #Lists all directories in ~/Projects/ in dmenu, and opens selected in ranger
 bindsym $mod+b exec ~/scripts/light/light.sh
 # #Changes brightness
@@ -89,7 +89,7 @@ bindsym $mod+Shift+Return exec x-terminal-emulator -e fish
 # #Opens fish terminal
 bindsym $mod+s exec rofi -show ssh
 # #Opens ssh
-bindsym $mod+semicolon exec ~/scripts/academics/academics.sh
+bindsym $mod+semicolon exec x-terminal-emulator -e ranger ~/Academics/Current/
 # #Lists all directories in ~/Academics/ in dmenu, and opens selected in ranger
 bindsym $mod+slash exec ~/scripts/todo/todo.sh
 # #Opens todo app. A dmeny listing opens such as read, add/edit, delete, and drive push.
@@ -151,10 +151,8 @@ bindsym $mod+o resize grow width 10 px or 10 ppt
 # focus follows mouse
 focus_follows_mouse no
 # split in horizontal orientation
-bindsym $mod+v split v; exec polybar-msg hook orientation 1
-# #Split vertical
-bindsym $mod+Shift+v split h; exec polybar-msg hook orientation 1
-# #Split horizontal
+bindsym $mod+v split toggle; exec polybar-msg hook orientation 1
+# #Split toggoel, and sends a message to polybar to tell that orientation may have changed
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 # #Toggles fullscreen for container
