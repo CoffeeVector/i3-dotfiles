@@ -56,8 +56,8 @@ bindsym $mod+backslash exec x-terminal-emulator -e vim
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show run
 # #Opens a dmenu that lets you run applications
-bindsym $mod+Shift+d exec ~/scripts/keyboard/keyboard.sh
-# #WIP. Opens dmenu that switches keyboard layout
+#bindsym $mod+Shift+d exec ~/scripts/keyboard/keyboard.sh
+#WIP. Opens dmenu that switches keyboard layout
 bindsym $mod+e exec x-terminal-emulator -e ranger
 # #Opens ranger in the home directory.
 bindsym $mod+Shift+equal exec ~/scripts/volume/volumeIncrease.sh
@@ -238,7 +238,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # #Restart i3
 # exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # class                 border  backgr. text    indicator child_border
 client.focused          $blue   $blue   $black  $red    $blue
 client.focused_inactive $black  $gray   $white  $red    $black
