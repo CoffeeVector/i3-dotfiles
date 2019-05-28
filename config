@@ -8,6 +8,8 @@ assign [class = "discord"] 10
 exec discord
 assign [title = "weechat"] 9
 exec x-terminal-emulator -e weechat
+assign [title = "newsboat"] 8
+exec x-terminal-emulator -e newsboat
 exec --no-startup-id nm-applet
 exec dunst
 
@@ -79,6 +81,8 @@ bindsym $mod+minus exec ~/scripts/light/lightDecrease.sh
 # #Decreases the brightness.
 bindsym $mod+m exec ~/scripts/dmenuCalc/dmenuCalc.sh
 # #Opens a menu that lets you do calculatiosn
+bindsym $mod+n exec st -e newsboat
+# #Opens newsboat rss feed
 bindsym $mod+Shift+p exec x-terminal-emulator -e ranger ~/Professional
 # #Lists all directories in ~/Professional/ in dmenu, and opens selected in ranger
 bindsym $mod+r exec x-terminal-emulator -e rtv
