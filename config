@@ -89,7 +89,7 @@ bindsym $mod+r exec x-terminal-emulator -e rtv
 # #Opens reddit in terminal
 bindsym $mod+Return exec x-terminal-emulator
 # #Opens new terminal
-bindsym $mod+Shift+Return exec x-terminal-emulator -e fish
+bindsym $mod+Shift+Return exec x-terminal-emulator -e python3 ~/Projects/acmd/main.py
 # #Opens fish terminal
 bindsym $mod+s exec rofi -show ssh
 # #Opens ssh
