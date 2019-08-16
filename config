@@ -56,7 +56,7 @@ bindsym $mod+Shift+b exec ~/scripts/backup/backup.sh
 bindsym $mod+backslash exec x-terminal-emulator -e vim
 # #Opens a quick vim with no file attached to it.
 #bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show drun
 # #Opens a dmenu that lets you run applications
 #bindsym $mod+Shift+d exec ~/scripts/keyboard/keyboard.sh
 #WIP. Opens dmenu that switches keyboard layout
